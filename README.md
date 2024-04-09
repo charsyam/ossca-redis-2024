@@ -43,3 +43,4 @@ Redis
 |이름|github|
 |------|---|
 |강대명|https://github.com/charsyam|
+|장유정|https://github.com/im-gnar|
