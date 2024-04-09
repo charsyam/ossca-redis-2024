@@ -40,7 +40,8 @@ Redis
 참석자
 ------
 
-|이름|github|
-|------|---|
-|강대명|https://github.com/charsyam|
-|장유정|https://github.com/im-gnar|
+| 이름  |github|
+|-----|---|
+| 강대명 |https://github.com/charsyam|
+| 장유정 |https://github.com/im-gnar|
+| 박수현 |https://github.com/Suxxxxhyun|
