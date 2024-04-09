@@ -44,3 +44,4 @@ Redis
 |------|---|
 |강대명|https://github.com/charsyam|
 |장유정|https://github.com/im-gnar|
+|최가희|https://github.com/GaHee99|
