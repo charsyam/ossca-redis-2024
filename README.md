@@ -1,4 +1,5 @@
- 해당 프로젝트는 2024 오픈소스 컨트리뷰션 아카데미 체험형 프로젝트를 위해서 임의로 만든 레포지토리 입니다.
+
+해당 프로젝트는 2024 오픈소스 컨트리뷰션 아카데미 체험형 프로젝트를 위해서 임의로 만든 레포지토리 입니다.
 
 Redis
 -----
@@ -40,8 +41,9 @@ Redis
 참석자
 ------
 
-|이름|github|
-|------|---|
-|강대명|https://github.com/charsyam|
-|장유정|https://github.com/im-gnar|
-|오주환|https://github.com/juhwano|
+| 이름  |github|
+|-----|---|
+| 강대명 |https://github.com/charsyam|
+| 장유정 |https://github.com/im-gnar|
+| 오주환 |https://github.com/juhwano|
+| 윤 영 |https://github.com/yunyoung1819|
