@@ -45,3 +45,4 @@ Redis
 |강대명|https://github.com/charsyam|
 |장유정|https://github.com/im-gnar|
 |오주환|https://github.com/juhwano|
+|최범수|https://github.com/bumpsoo|
