@@ -1,0 +1,12 @@
+STD=-pedantic -DSERVER_STATIC= -Wno-c11-extensions -std=gnu11
+WARN=-Wall -W -Wno-missing-field-initializers -Werror=deprecated-declarations -Wstrict-prototypes
+OPT=-O3 -flto -fno-omit-frame-pointer
+MALLOC=libc
+BUILD_TLS=
+USE_SYSTEMD=
+CFLAGS=
+LDFLAGS=
+SERVER_CFLAGS=
+SERVER_LDFLAGS=
+PREV_FINAL_CFLAGS=-pedantic -DSERVER_STATIC= -Wno-c11-extensions -std=gnu11 -Wall -W -Wno-missing-field-initializers -Werror=deprecated-declarations -Wstrict-prototypes -O3 -flto -fno-omit-frame-pointer -g -ggdb -I../deps/hiredis -I../deps/linenoise -I../deps/lua/src -I../deps/hdr_histogram -I../deps/fpconv -DUSE_REDIS_SYMLINKS
+PREV_FINAL_LDFLAGS= -O3 -flto -fno-omit-frame-pointer -g -ggdb
