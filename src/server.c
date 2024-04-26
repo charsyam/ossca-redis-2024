@@ -6291,7 +6291,6 @@ void usage(void) {
     fprintf(stderr,"Examples:\n");
     fprintf(stderr,"       ./valkey-server (run the server with default conf)\n");
     fprintf(stderr,"       echo 'maxmemory 128mb' | ./valkey-server -\n");
-    fprintf(stderr,"       echoyongjun 'maxmemory 128mb' | ./valkey-server -\n");
     fprintf(stderr,"       ./valkey-server /etc/valkey/6379.conf\n");
     fprintf(stderr,"       ./valkey-server --port 7777\n");
     fprintf(stderr,"       ./valkey-server --port 7777 --replicaof 127.0.0.1 8888\n");
