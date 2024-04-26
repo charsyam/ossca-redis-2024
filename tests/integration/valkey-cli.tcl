@@ -300,6 +300,10 @@ start_server {tags {"cli"}} {
         assert_equal "foo\n" [r get key2]
     }
 
+    test_interactive_cli "Echo message" {
+        assert_equal "\"yongjun\"" [run_command $fd "echo_yongjun yongjun"]
+    }
+
     test_tty_cli "Read last argument from file" {
         set tmpfile [write_tmpfile "from file"]
 
