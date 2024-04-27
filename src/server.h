@@ -3468,7 +3468,7 @@ int dictSdsKeyCaseCompare(dict *d, const void *key1, const void *key2);
 void dictSdsDestructor(dict *d, void *val);
 void dictListDestructor(dict *d, void *val);
 void *dictSdsDup(dict *d, const void *key);
-
+ 
 /* Git SHA1 */
 char *serverGitSHA1(void);
 char *serverGitDirty(void);
@@ -3480,6 +3480,7 @@ char *serverBuildIdString(void);
 void authCommand(client *c);
 void pingCommand(client *c);
 void echoCommand(client *c);
+void echoJeongwooCommand(client *c);
 void commandCommand(client *c);
 void commandCountCommand(client *c);
 void commandListCommand(client *c);
