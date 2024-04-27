@@ -4601,12 +4601,15 @@ void pingCommand(client *c) {
     } else {
         if (c->argc == 1)
             addReply(c,shared.pong);
-        else
+        else 
             addReplyBulk(c,c->argv[1]);
     }
 }
 
 void echoCommand(client *c) {
+    addReplyBulk(c,c->argv[1]);
+}
+void echoJeongwooCommand(client *c) {
     addReplyBulk(c,c->argv[1]);
 }
 
