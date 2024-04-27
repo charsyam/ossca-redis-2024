@@ -4610,7 +4610,8 @@ void echoCommand(client *c) {
     addReplyBulk(c,c->argv[1]);
 }
 
-void iechoSeongJu(client *c){
+void echoSeongJuCommand(client *c){
+//	printf("----echoSeongJuCommand Run----");	
 	addReplyBulk(c,c->argv[1]);
 }
 
