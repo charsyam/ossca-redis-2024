@@ -4610,6 +4610,25 @@ void echoCommand(client *c) {
     addReplyBulk(c,c->argv[1]);
 }
 
+void echoSeongJuCommand(client *c){
+//	printf("----echoSeongJuCommand Run----");	
+//	addReplyBulk(c,c->argv[1]);
+	char *str = (char*)(c->argv[0]->ptr);
+	char str2[] = "_";
+	char *str3 = (char*)(c->argv[1]->ptr);
+
+	strcat(str,str2);
+		
+//	printf("1: str====>%s\n",str);
+	
+	strcat(str,str3);
+	
+//	printf("2: str=====>%s",str);
+
+	sds info = sdscatfmt(sdsempty(),str);
+	addReplyBulkSds(c,info);
+}
+
 void timeCommand(client *c) {
     addReplyArrayLen(c,2);
     addReplyBulkLongLong(c, server.unixtime);
