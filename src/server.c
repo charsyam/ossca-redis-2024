@@ -4611,7 +4611,9 @@ void echoCommand(client *c) {
 }
 
 void echoStreet62Command(client *c) {
-    addReplyBulk(c,c->argv[1]);
+    sds reply = sdscatfmt(sdsempty(), "echo_street62_%s", c->argv[1]->ptr);
+
+    addReplyBulkSds(c, reply);
 }
 
 void timeCommand(client *c) {
