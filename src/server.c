@@ -4612,7 +4612,10 @@ void echoCommand(client *c) {
 
 void echo2Command(client *c) {
     sds reply = sdscatfmt(sdsempty(), "echo2_%s", c->argv[1]->ptr);
-    addReplyBulkSds(c, reply);
+    // addReplyBulkSds(c, reply);
+    addReplyLongLongWithPrefix(c, sdslen(reply), '$');
+    addReplySds(c, reply);
+    addReplyProto(c, "\r\n", 2);
 }
 
 void timeCommand(client *c) {
