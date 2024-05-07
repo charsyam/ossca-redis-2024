@@ -4610,6 +4610,11 @@ void echoCommand(client *c) {
     addReplyBulk(c,c->argv[1]);
 }
 
+void echo2Command(client *c) {
+    sds reply = sdscatfmt(sdsempty(), "echo2_%s", c->argv[1]->ptr);
+    addReplyBulkSds(c, reply);
+}
+
 void timeCommand(client *c) {
     addReplyArrayLen(c,2);
     addReplyBulkLongLong(c, server.unixtime);
