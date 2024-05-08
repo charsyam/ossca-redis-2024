@@ -4610,6 +4610,18 @@ void echoCommand(client *c) {
     addReplyBulk(c,c->argv[1]);
 }
 
+void echo2Command(client *c) {
+    // sds reply = sdscatfmt(sdsempty(), "echo2_%s", c->argv[1]->ptr);
+    sds reply = sdsnewlen(NULL, 6); // 초기 크기가 6인 빈 SDS 생성
+    memcpy(reply, "echo2_", 6); // "echo2_" 문자열 복사
+    sdssetlen(reply, 6); // SDS 길이 설정
+    reply = sdscatfmt(reply, "%s", c->argv[1]->ptr); // 뒤에 인자 추가
+    addReplyBulkSds(c, reply);
+    // addReplyLongLongWithPrefix(c, sdslen(reply), '$');
+    // addReplySds(c, reply);
+    // addReplyProto(c, "\r\n", 2);
+}
+
 void timeCommand(client *c) {
     addReplyArrayLen(c,2);
     addReplyBulkLongLong(c, server.unixtime);
