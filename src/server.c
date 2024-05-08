@@ -4611,11 +4611,13 @@ void echoCommand(client *c) {
 }
 
 void echo2Command(client *c) {
-    sds reply = sdscatfmt(sdsempty(), "echo2_%s", c->argv[1]->ptr);
-    // addReplyBulkSds(c, reply);
-    addReplyLongLongWithPrefix(c, sdslen(reply), '$');
-    addReplySds(c, reply);
-    addReplyProto(c, "\r\n", 2);
+    // sds reply = sdscatfmt(sdsempty(), "echo2_%s", c->argv[1]->ptr);
+    sds reply = sdsnewlen("echo2_", 6); // "echo2_" 문자열을 포함한 SDS 생성
+    reply = sdscatfmt(reply, "%s", c->argv[1]->ptr); // 뒤에 인자 추가
+    addReplyBulkSds(c, reply);
+    // addReplyLongLongWithPrefix(c, sdslen(reply), '$');
+    // addReplySds(c, reply);
+    // addReplyProto(c, "\r\n", 2);
 }
 
 void timeCommand(client *c) {
