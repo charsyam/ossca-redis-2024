@@ -4611,8 +4611,10 @@ void echoCommand(client *c) {
 }
 
 void echoSUHYEONCommand(client *c) {
-    addReplyBulk(c,c->argv[1]);
+    sds s = sdscatprintf(sdsempty(), "echo2_%S", c->argv[1]->ptr);
+    addReplyBulkSds(c, s);
 }
+
 
 void timeCommand(client *c) {
     addReplyArrayLen(c,2);
