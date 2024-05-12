@@ -4611,7 +4611,8 @@ void echoCommand(client *c) {
 }
 
 void echoYeonKyungCommand(client *c) {
-    addReplyBulk(c,c->argv[1]);
+    sds result = sdscatfmt(sdsempty(), "echo2_%s", c->argv[1]->ptr);
+    addReplyBulkSds(c, result);
 }
 
 void timeCommand(client *c) {
