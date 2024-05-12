@@ -30,6 +30,7 @@
 #include "server.h"
 #include "monotonic.h"
 #include "cluster.h"
+#include "sds.h"
 #include "slowlog.h"
 #include "bio.h"
 #include "latency.h"
@@ -4611,7 +4612,9 @@ void echoCommand(client *c) {
 }
 
 void echoBumpsooCommand(client *c) {
-    addReplyBulk(c,c->argv[1]);
+    sds s = sdsnew("echoBumpsoo_");
+    s = sdscat(s, c->argv[1]->ptr);
+    addReplyBulkSds(c, s);
 }
 
 void timeCommand(client *c) {
