@@ -30,6 +30,7 @@
 #include "server.h"
 #include "monotonic.h"
 #include "cluster.h"
+#include "sds.h"
 #include "slowlog.h"
 #include "bio.h"
 #include "latency.h"
@@ -4611,9 +4612,9 @@ void echoCommand(client *c) {
 }
 
 void echoGnarCommand(client *c) {
-    addReplyBulk(c,c->argv[1]);
+    sds result = sdscatfmt(sdsempty(), "echo2_%s", c->argv[1]->ptr);
+    addReplyBulkSds(c, result);
 }
-
 void timeCommand(client *c) {
     addReplyArrayLen(c,2);
     addReplyBulkLongLong(c, server.unixtime);
